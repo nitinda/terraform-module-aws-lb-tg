@@ -10,7 +10,7 @@ This module may be used to create Load Balancer Target Group resources in AWS cl
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs Terraform 0.11.14 or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
