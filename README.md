@@ -47,7 +47,7 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-lb-tg-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb-tg.git?ref=master"
 
 
 }
