@@ -57,10 +57,16 @@ The variables required in order for the module to be successfully called from th
 
 |         **_Variable_**          |        **_Description_**            |   **_Type_**   |
 |---------------------------------|-------------------------------------|----------------|
+| name                            | target group name                   | string         |
+| port                            | Target Group Port                   | string         |
+| protocol                        | Target Grop protocal                | string         |
+| vpc_id                          | VPC ID                              | string         |
+| health_check                    | Target Group Health Check           | map(string)    |
+| deregistration_delay            | Delay in seconds                    | string         |
+| common_tags                     | Tags                                | map(string)    |
+| target_type                     | Target type                         | string         |
 
 
-
-Details are in respective branch.
 
 
 ## Outputs
@@ -70,7 +76,6 @@ Details are in respective branch.
 * **_arn_**
 
 
-Details are in respective branch.
 
 
 ### Usage
