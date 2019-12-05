@@ -21,11 +21,11 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_target-ip-instance_**
+From branch : **_terraform-11/target-ip-instance_**
 
 * **_Load Balancer Target Group (Terraform 11 supported code)_**
 
-From branch : **_target-lambda_** *work in progress*
+From branch : **_terraform-11/target-lambda_** *work in progress*
 
 * **_Load Balancer Target Group (Terraform 11 supported code - work in progres)_**
 
