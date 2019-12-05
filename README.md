@@ -43,7 +43,38 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-lb-tg-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb-tg.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb-tg.git?ref=terraform-12/target-ip-instance"
+
+  # Providers
+  providers = {
+    "aws" = "aws.services"
+  }
+
+  # Tags
+  common_tags = "${merge(var.common_tags, map(
+    "Description", "Load balancer Target Group",
+    "ManagedBy", "Terraform"
+  ))}"
+
+  # ALB Target Group
+  name                 = "${var.target_group_name}"
+  port                 = "${var.target_group_port}"
+  protocol             = "${var.target_group_protocol}"
+  vpc_id               = "${var.vpc_id}"
+  target_type          = "${var.target_group_type}"
+  deregistration_delay = "${var.target_group_deregistration_delay}"
+  health_check         = [
+    {
+      healthy_threshold   = "2"
+      unhealthy_threshold = "2"
+      interval            = "5"
+      matcher             = "200"
+      path                = "/login"
+      port                = "traffic-port"
+      protocol            = "HTTP"
+      timeout             = "3"
+    }
+  ]
 
 
 }
