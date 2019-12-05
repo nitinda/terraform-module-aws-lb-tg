@@ -51,34 +51,33 @@ module "<layer>-lb-tg-<AccountID>" {
   }
 
   # Tags
-  common_tags = "${merge(var.common_tags, map(
+  common_tags = merge(var.common_tags, map(
     "Description", "Load balancer Target Group",
     "ManagedBy", "Terraform"
-  ))}"
+  ))
 
   # ALB Target Group
-  name                 = "${var.target_group_name}"
-  port                 = "${var.target_group_port}"
-  protocol             = "${var.target_group_protocol}"
-  vpc_id               = "${var.vpc_id}"
-  target_type          = "${var.target_group_type}"
-  deregistration_delay = "${var.target_group_deregistration_delay}"
-  health_check         = [
-    {
-      healthy_threshold   = "2"
-      unhealthy_threshold = "2"
-      interval            = "5"
-      matcher             = "200"
-      path                = "/login"
-      port                = "traffic-port"
-      protocol            = "HTTP"
-      timeout             = "3"
-    }
-  ]
-
-
+  name                 = var.target_group_name
+  port                 = var.target_group_port
+  protocol             = var.target_group_protocol
+  vpc_id               = var.vpc_id
+  target_type          = var.target_group_type
+  deregistration_delay = var.target_group_deregistration_delay
+  health_check         = {
+    healthy_threshold   = "2"
+    unhealthy_threshold = "2"
+    interval            = "5"
+    matcher             = "200"
+    path                = "/login"
+    port                = "traffic-port"
+    protocol            = "HTTP"
+    timeout             = "3"
+  }
 }
+
 ```
+
+
 ---
 
 ## Inputs
