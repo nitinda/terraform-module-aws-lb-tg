@@ -5,10 +5,12 @@ variable "name" {
 
 variable "target_type" {
   description = "The type of target that you must specify when registering targets with this target group"
+  default     = 
 }
 
 variable "port" {
   description = "The port on which targets receive traffic, unless overridden when registering a specific target."
+  type        = number
 }
 
 variable "protocol" {
