@@ -107,6 +107,7 @@ _The variables required in order for the module to be successfully called from t
 * **_arn\_suffix_**
 
 
+---
 
 
 ### Usage
@@ -120,6 +121,7 @@ _The output variable is able to be accessed through terraform state file using t
 ```tf
 "${data.terraform_remote_state.<module_name>.<output_variable_name>}"
 ```
+---
 
 ## Authors
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
