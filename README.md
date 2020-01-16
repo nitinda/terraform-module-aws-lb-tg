@@ -88,7 +88,7 @@ _The variables required in order for the module to be successfully called from t
 | **_name_** | _Target group name_ | _string_ | **_Required_** |
 | **_port_** | _Target Group Port_ | _number_ | **_Required_** |
 | **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** |
-| **_vpc\_id_** | _The identifier of the VPC in which to create the target group_ | _string_ | **_Required_** |
+| **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** |
 | **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
 | **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional (Default - 300)_** |
 | **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
