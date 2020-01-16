@@ -60,17 +60,18 @@ module "alb_tg" {
   protocol             = var.target_group_protocol
   vpc_id               = var.vpc_id
   target_type          = var.target_group_type
-  deregistration_delay = var.target_group_deregistration_delay
-  health_check         = {
-    healthy_threshold   = "2"
-    unhealthy_threshold = "2"
-    interval            = "5"
-    matcher             = "200"
-    path                = "/login"
-    port                = "traffic-port"
-    protocol            = "HTTP"
-    timeout             = "3"
-  }
+  health_check         = [
+      {
+          healthy_threshold   = 2
+          unhealthy_threshold = 2
+          interval            = 5
+          matcher             = "200"
+          path                = "/"
+          port                = "traffic-port"
+          protocol            = "HTTP"
+          timeout             = 3
+      }
+  ]
 }
 
 ```
