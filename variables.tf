@@ -29,7 +29,7 @@ variable "deregistration_delay" {
 
 variable "health_check" {
   description = "A Health Check block."
-  type        = map(string)
+  type        = any
 }
 
 ## Tags

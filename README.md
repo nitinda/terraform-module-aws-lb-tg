@@ -91,7 +91,7 @@ _The variables required in order for the module to be successfully called from t
 | **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** |
 | **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
 | **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional (Default - 300)_** |
-| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
+| **_health\_check_** | _A Health Check block_ | _any_ | **_Required_** |
 | **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** |
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
 

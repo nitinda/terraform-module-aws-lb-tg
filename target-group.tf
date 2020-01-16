@@ -21,4 +21,3 @@ resource "aws_lb_target_group" "lb_target_group" {
   }
   tags = var.common_tags
 }
-
