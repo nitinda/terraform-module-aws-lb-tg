@@ -3,27 +3,25 @@
 
 ## General
 
-This module may be used to create Load Balancer Target Group resources in AWS cloud provider..
+_This module may be used to create_ **_Load Balancer Target Group_** _resources in AWS cloud provider...._
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.12.16 or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs_ **_Terraform 0.12.16_** _or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
-This module deploys aws services details are in respective feature branches.
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
 ## Features Branches
 
-Below we are able to check the resources that are being created as part of this module call:
+_Below we are able to check the resources that are being created as part of this module call:_
 
-From branch : **_terraform-12/target-ip-instance_**
-
-* **_Load Balancer Target Group (Terraform 12 supported code)_**
+* **_Load Balancer Target Group_**
 
 
 ---
@@ -39,15 +37,15 @@ From branch : **_terraform-12/target-ip-instance_**
 
 ## Using this repo
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
-module "<layer>-lb-tg-<AccountID>" {
+module "alb_tg" {
   source = "git::https://github.com/nitinda/terraform-module-aws-lb-tg.git?ref=terraform-12/target-ip-instance"
 
   # Providers
   providers = {
-    "aws" = "aws.services"
+    aws = aws.services
   }
 
   # Tags
@@ -82,61 +80,45 @@ module "<layer>-lb-tg-<AccountID>" {
 
 ## Inputs
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
-| name                            | target group name                   | string         |
-| port                            | Target Group Port                   | string         |
-| protocol                        | Target Grop protocal                | string         |
-| vpc_id                          | VPC ID                              | string         |
-| health_check                    | Target Group Health Check           | map(string)    |
-| deregistration_delay            | Delay in seconds                    | string         |
-| common_tags                     | Tags                                | map(string)    |
-| target_type                     | Target type                         | string         |
+|**_Variable_** | **_Description_** | **_Type_** | **_Comments_** |
+|:----|:----|-----:|-----:|
+| **_name_** | _Target group name_ | _string_ | **_Required_** |
+| **_port_** | _Target Group Port_ | _number_ | **_Required_** |
+| **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** |
+| **_vpc\_id_** | _The identifier of the VPC in which to create the target group_ | _string_ | **_Required_** |
+| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
+| **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional (Default - 300)_** |
+| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
+| **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** |
+| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
 
 
 
 
 ## Outputs
 
-* **_dns\_name_**
 * **_id_**
 * **_arn_**
+* **_name_**
+* **_arn\_suffix_**
 
 
 
 
 ### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+_In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
-
-If an output variable needs to be exposed on root level in order to be accessed through terraform state file follow the steps below:
-
-- Include the syntax above in the network layer output terraform file.
-- Add the code snippet below to the variables/global_variables file.
-
-```tf
-data "terraform_remote_state" "<module_name>" {
-  backend = "s3"
-
-  config {
-    bucket = <bucket_name> (i.e. "s3-webstack-terraform-state")
-    key    = <state_file_relative_path> (i.e. "env:/${terraform.workspace}/4_Networking/terraform.tfstate")
-    region = <bucket_region> (i.e. "eu-central-1")
-  }
-}
-```
-
-- The output variable is able to be accessed through terraform state file using the syntax below:
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
 "${data.terraform_remote_state.<module_name>.<output_variable_name>}"
 ```
 
 ## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+_Module maintained by Module maintained by the -_ **_Nitin Das_**

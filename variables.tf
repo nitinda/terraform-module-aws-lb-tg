@@ -21,6 +21,8 @@ variable "vpc_id" {
 
 variable "deregistration_delay" {
   description = "The amount time for Elastic Load Balancing to wait before changing the state of a deregistering target from draining to unused."
+  default     = 300
+  type        = number
 }
 
 variable "health_check" {
