@@ -95,6 +95,7 @@ _The variables required in order for the module to be successfully called from t
 | **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** |
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
 
+---
 
 
 
