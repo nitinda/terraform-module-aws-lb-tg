@@ -19,5 +19,5 @@ resource "aws_lb_target_group" "lb_target_group" {
       unhealthy_threshold = lookup(health_check.value, "unhealthy_threshold", null)
     }
   }
-  tags = var.common_tags
+  tags = var.tags
 }

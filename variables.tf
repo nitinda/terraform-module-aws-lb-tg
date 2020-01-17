@@ -33,7 +33,7 @@ variable "health_check" {
 
 ## Tags
 
-variable "common_tags" {
+variable "tags" {
   description = "Resources Tags"
   type        = map(string)
 }
