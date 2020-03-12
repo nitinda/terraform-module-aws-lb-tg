@@ -120,16 +120,20 @@ _The variables required in order for the module to be successfully called from t
 
 
 ### _Usage_
+
 _In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
+
+
 _The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
 data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
+
 ---
 
 ## Authors
