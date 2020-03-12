@@ -55,10 +55,12 @@ module "alb_tg" {
   }
 
   # Tags
-  common_tags = merge(var.common_tags, map(
-    "Description", "Load balancer Target Group",
-    "ManagedBy", "Terraform"
-  ))
+  tags = {
+    Description = "Load balancer Target Group"
+    ManagedBy   = "Terraform"
+    Project     = "POC"
+    Environment = "prod"
+  }
 
   # ALB Target Group
   name                 = var.target_group_name
