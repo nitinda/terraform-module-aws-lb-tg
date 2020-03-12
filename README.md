@@ -1,14 +1,27 @@
-# Terraform Module Name: terraform-module-lb-tg
+# _Terraform Module Name: terraform-module-lb-tg_
 
 
-## General
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
+
+
+## _General_
 
 _This module may be used to create_ **_Load Balancer Target Group_** _resources in AWS cloud provider...._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
 _This module needs_ **_Terraform 0.12.16_** _or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
@@ -17,7 +30,7 @@ _This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Features Branches
+## _Features_
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
@@ -26,16 +39,9 @@ _Below we are able to check the resources that are being created as part of this
 
 ---
 
-## Below are the resources that are launched by this module
+## _Usage_
 
-* **_Load Balancer Target Group_**
-
-
----
-
-## Usage
-
-## Using this repo
+## _Using this repo_
 
 _To use this module, add the following call to your code:_
 
@@ -79,7 +85,7 @@ module "alb_tg" {
 
 ---
 
-## Inputs
+## _Inputs_
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
@@ -100,7 +106,7 @@ _The variables required in order for the module to be successfully called from t
 
 
 
-## Outputs
+## _Outputs_
 
 * **_id_**
 * **_arn_**
@@ -111,7 +117,7 @@ _The variables required in order for the module to be successfully called from t
 ---
 
 
-### Usage
+### _Usage_
 _In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
