@@ -1,16 +1,5 @@
-# _Terraform Module Name: terraform-module-lb-tg_
+# Terraform Module Name: terraform-module-lb-tg
 
-<!--BEGIN STABILITY BANNER-->
----
-
-![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
-
-> **_This is a stable example. It should successfully build out of the box_**
->
-> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
-
----
-<!--END STABILITY BANNER-->
 
 ## General
 
@@ -28,7 +17,7 @@ _This module deploys aws services details are in respective feature branches._
 
 ---
 
-## _Features_
+## Features Branches
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
