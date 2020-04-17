@@ -13,7 +13,7 @@ resource "aws_lb_target_group" "lb_target_group" {
   dynamic "stickiness" {
     for_each = var.stickiness == {} ? [] : [var.stickiness]
     content {
-      type            = lookup(stickiness.value, "type", null)
+      type            = lookup(stickiness.value, "type", "lb_cookie")
       cookie_duration = lookup(stickiness.value, "cookie_duration", null)
       enabled         = lookup(stickiness.value, "enabled", null)
     }
