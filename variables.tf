@@ -48,7 +48,8 @@ variable "proxy_protocol_v2" {
 
 variable "stickiness" {
   description = "A Stickiness block. Stickiness blocks are documented below. stickiness is only valid if used with Load Balancers of type Application"
-  default     = null
+  type        = map(string)
+  default     = {}
 }
 
 variable "health_check" {

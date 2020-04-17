@@ -103,7 +103,7 @@ _The variables required in order for the module to be successfully called from t
 | **_load\_balancing\_algorithm\_type_** | _Determines how the load balancer selects targets when routing requests. Only applicable for Application Load Balancer Target Groups. The value is round\_robin or least\_outstanding\_requests. The default is **round\_robin**._ | _string_ | **_Optional_** | **_round\_robin_** |
 | **_lambda\_multi\_value\_headers\_enabled_** | _Boolean whether the request and response headers exchanged between the load balancer and the Lambda function include arrays of values or strings. Only applies when **target\_type** is **lambda**._ | _boolean_ | **_Optional_** | **_null_** |
 | **_proxy\_protocol\_v2_** | _Boolean to enable / disable support for proxy protocol v2 on Network Load Balancers._ | _any_ | **_Optional_** | **_null_** |
-| **_stickiness_** | _A Stickiness block. Stickiness blocks are documented below. stickiness is only valid if used with Load Balancers of type Application_ | _any_ | **_Optional_** | **_{}_** |
+| **_stickiness_** | _A Stickiness block. Stickiness blocks are documented below. stickiness is only valid if used with Load Balancers of type Application_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_target\_type_** | _The type of target that you must specify when registering targets with this target group._ | _string_ | **_Optional_** | **_{}_** |
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
