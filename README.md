@@ -94,7 +94,7 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
 |:----|:----|-----:|:---:|:---:|
-| **_name_** | _Target group name_ | _string_ | **_Required_** | **_{}_** |
+| **_name_** | _The name of the target group, Forces new resource_ | _string_ | **_Optional_** | **_null_** |
 | **_port_** | _Target Group Port_ | _number_ | **_Required_** | **_{}_** |
 | **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** | **_{}_** |
 | **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** | **_{}_** |
