@@ -11,7 +11,7 @@ resource "aws_lb_target_group" "lb_target_group" {
 
 
   dynamic "stickiness" {
-    for_each = var.stickiness
+    for_each = var.stickiness == {} ? [] : [var.stickiness]
     content {
       type            = lookup(stickiness.value, "type", null)
       cookie_duration = lookup(stickiness.value, "cookie_duration", null)
@@ -20,7 +20,7 @@ resource "aws_lb_target_group" "lb_target_group" {
   }
 
   dynamic "health_check" {
-    for_each = var.health_check
+    for_each = var.health_check == {} ? [] : [var.health_check]
     content {
       enabled             = lookup(health_check.value, "enabled", null)
       healthy_threshold   = lookup(health_check.value, "healthy_threshold", null)
