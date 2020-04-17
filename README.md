@@ -98,11 +98,13 @@ _The variables required in order for the module to be successfully called from t
 | **_name\_prefix_** | _Creates a unique name beginning with the specified prefix. Forces new resource_ | _string_ | **_Optional_** | **_null_** |
 | **_port_** | _The port on which targets receive traffic, unless overridden when registering a specific target.Forces new resource.<br/>Required when_ **_target\_type_** _is_ **_instance_** _or_ **_ip_** | _number_ | **_Optional_** | **_null_** |
 | **_protocol_** | _The protocol to use for routing traffic to the targets. Should be one of "TCP", "TLS", "UDP", "TCP\_UDP", "HTTP" or "HTTPS". Required when **target\_type** is instance or ip. Does not apply when **target\_type** is **lambda**._ | _number_ | **_Optional_** | **_null_** |
-| **_vpc\_id_** | _The identifier of the VPC in which to create the target group. Required when **target\_type** is instance or ip. Does not apply when **target\_type** is **lambda**._ | _string_ | **_Required_** | **_{}_** |
-| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** | **_{}_** |
-| **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional_** | **_300_** |
+| **_vpc\_id_** | _The identifier of the VPC in which to create the target group. Required when **target\_type** is instance or ip. Does not apply when **target\_type** is **lambda**._ | _string_ | **_Optional_** | **_null_** |
+| **_deregistration\_delay_** | _The amount time for Elastic Load Balancing to wait before changing the state of a deregistering target from draining to unused. The range is 0-3600 seconds. The default value is 300 seconds._ | _number_ | **_Optional_** | **_300_** |
+| **_load\_balancing\_algorithm\_type_** | _TDetermines how the load balancer selects targets when routing requests. Only applicable for Application Load Balancer Target Groups. The value is round_robin or least\_outstanding\_requests. The default is round\_robin._ | _string_ | **_Optional_** | **_round\_robin_** |
+
 | **_health\_check_** | _A Health Check block_ | _any_ | **_Required_** | **_{}_** |
 | **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** | **_{}_** |
+| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** | **_{}_** |
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 ---
