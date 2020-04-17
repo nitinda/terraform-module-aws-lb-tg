@@ -13,9 +13,9 @@ resource "aws_lb_target_group" "lb_target_group" {
   dynamic "stickiness" {
     for_each = var.stickiness
     content {
-      enabled           = lookup(stickiness.value, "type", null)
-      healthy_threshold = lookup(stickiness.value, "cookie_duration", null)
-      interval          = lookup(stickiness.value, "enabled", null)
+      type            = lookup(stickiness.value, "type", null)
+      cookie_duration = lookup(stickiness.value, "cookie_duration", null)
+      enabled         = lookup(stickiness.value, "enabled", null)
     }
   }
 
