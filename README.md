@@ -1,4 +1,5 @@
 # _Terraform Module Name: terraform-module-lb-tg_
+_Terraform module for **_AWS Target Group_**_
 
 
 <!--BEGIN STABILITY BANNER-->
@@ -8,7 +9,6 @@
 
 > **_This is a stable example. It should successfully build out of the box_**
 >
-> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
 
 ---
 <!--END STABILITY BANNER-->
@@ -16,7 +16,7 @@
 
 ## _General_
 
-_This module may be used to create_ **_Load Balancer Target Group_** _resources in AWS cloud provider...._
+_This module may be used to create_ **_Target Group_** _resources in AWS cloud provider...._
 
 ---
 
@@ -34,7 +34,7 @@ _This module deploys aws services details are in respective feature branches._
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
-* **_Load Balancer Target Group_**
+* **_Target Group_**
 
 
 ---
@@ -92,17 +92,17 @@ module "alb_tg" {
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Comments_** |
-|:----|:----|-----:|-----:|
-| **_name_** | _Target group name_ | _string_ | **_Required_** |
-| **_port_** | _Target Group Port_ | _number_ | **_Required_** |
-| **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** |
-| **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** |
-| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** |
-| **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional (Default - 300)_** |
-| **_health\_check_** | _A Health Check block_ | _any_ | **_Required_** |
-| **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_name_** | _Target group name_ | _string_ | **_Required_** | **_{}_** |
+| **_port_** | _Target Group Port_ | _number_ | **_Required_** | **_{}_** |
+| **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** | **_{}_** |
+| **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** | **_{}_** |
+| **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** | **_{}_** |
+| **_deregistration\_delay_** | _Target Group Health Check_ | _number_ | **_Optional_** | **_300_** |
+| **_health\_check_** | _A Health Check block_ | _any_ | **_Required_** | **_{}_** |
+| **_target\_type_** | _The type of target that you must specify_ | _string_ | **_Required_** | **_{}_** |
+| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 ---
 
@@ -121,12 +121,6 @@ _The variables required in order for the module to be successfully called from t
 
 ### _Usage_
 
-_In order for the variables to be accessed on module level please use the syntax below:_
-
-```tf
-module.<module_name>.<output_variable_name>
-```
-
 
 _The output variable is able to be accessed through terraform state file using the syntax below:_
 
@@ -136,5 +130,5 @@ data.terraform_remote_state.<module_name>.<output_variable_name>
 
 ---
 
-## Authors
+## _Authors_
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
