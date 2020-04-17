@@ -1,7 +1,14 @@
 ## Target Group
 variable "name" {
   description = "The name of the target group."
+  default     = null
 }
+
+variable "name_prefix" {
+  description = " Creates a unique name beginning with the specified prefix"
+  default     = null
+}
+
 
 variable "target_type" {
   description = "The type of target that you must specify when registering targets with this target group"

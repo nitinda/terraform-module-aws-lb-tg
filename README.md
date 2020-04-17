@@ -95,7 +95,8 @@ _The variables required in order for the module to be successfully called from t
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
 |:----|:----|-----:|:---:|:---:|
 | **_name_** | _The name of the target group, Forces new resource_ | _string_ | **_Optional_** | **_null_** |
-| **_port_** | _Target Group Port_ | _number_ | **_Required_** | **_{}_** |
+| **_name\_prefix_** | _Creates a unique name beginning with the specified prefix.<br/>Forces new resource_ | _string_ | **_Optional_** | **_null_** |
+| **_port_** | _The port on which targets receive traffic, unless overridden when <br/>registering a specific target.Forces new resource<br/>.Required when **_target\_type_** is **_instance_** or **_ip_**_ | _number_ | **_Optional_** | **_null_** |
 | **_protocol_** | _The protocol to use for routing traffic to the targets_ | _number_ | **_Required_** | **_{}_** |
 | **_vpc\_id_** | _The identifier of the VPC_ | _string_ | **_Required_** | **_{}_** |
 | **_health\_check_** | _A Health Check block_ | _map(string)_ | **_Required_** | **_{}_** |
